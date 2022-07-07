@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export default function LoginPage(){
     const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
+    const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     function logar(){
@@ -13,7 +13,7 @@ export default function LoginPage(){
             'http://localhost:5000/login',
             {
                 email,
-                senha,
+                password,
             }
           );
           request.then((response) => {
@@ -31,7 +31,7 @@ export default function LoginPage(){
             <Header>Book📚Store</Header>
             <Instrução>Preencha seus dados para login:</Instrução>
             <Input type='email' placeholder="E-mail" onChange={(event)=>setEmail(event.target.value)}/>
-            <Input type='password' placeholder="Senha" onChange={(event)=>setSenha(event.target.value)}/>
+            <Input type='password' placeholder="Senha" onChange={(event)=>setPassword(event.target.value)}/>
             <Button onClick={()=>logar()}>Entrar</Button>
             <Footer to='/cadastro'>
                 <p>Ainda não possui conta?</p>

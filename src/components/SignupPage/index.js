@@ -4,39 +4,42 @@ import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export default function SignupPage(){
-    const [nome, setNome] = useState('');
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
-    const [senhaConfirmada, setSenhaConfirmada] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordConfirmation, setpasswordConfirmation] = useState('');
     const navigate = useNavigate();
 
     function cadastrar(){
-        const request = axios.post(
-            'http://localhost:5000/cadastro',
-            {
-                nome,
-                email,
-                senha,
-                senhaConfirmada
-            }
-          );
-          request.then((response) => {
-            console.log(response.data);
-            navigate("/");
-          });
-          request.catch((problem) => {
-            console.log(problem.response.data);
-          });
+        if(password===passwordConfirmation){
+            const request = axios.post(
+                'http://localhost:5000/cadastro',
+                {
+                    name,
+                    email,
+                    password,
+                }
+            );
+            request.then((response) => {
+                console.log(response.data);
+                navigate("/");
+            });
+            request.catch((problem) => {
+                console.log(problem.response.data);
+            });
+        }
+        else alert('Campo "Senha" e "Repita a senha" devem ser iguais');
+
     }
 
     return(
         <SignupPageContainer>
             <Header>Book📚Store</Header>
             <Instrução>Preencha seus dados de cadastro:</Instrução>
-            <Input type='text' placeholder="Nome" onChange={(event)=>setNome(event.target.value)}/>
+            <Input type='text' placeholder="Nome" onChange={(event)=>setName(event.target.value)}/>
             <Input type='email' placeholder="E-mail" onChange={(event)=>setEmail(event.target.value)}/>
-            <Input type='password' placeholder="Senha" onChange={(event)=>setSenha(event.target.value)}/>
-            <Input type='password' placeholder="Repita a senha" onChange={(event)=>setSenhaConfirmada(event.target.value)}/>
+            <Input type='password' placeholder="Senha" onChange={(event)=>setPassword(event.target.value)}/>
+            <Input type='password' placeholder="Repita a senha" onChange={(event)=>setpasswordConfirmation(event.target.value)}/>
             <Button onClick={()=>cadastrar()}>Cadastre-se</Button>
             <Footer to='/'>
                 <p>Já possui conta?</p>
