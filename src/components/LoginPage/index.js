@@ -10,7 +10,7 @@ export default function LoginPage(){
 
     function logar(){
         const request = axios.post(
-            'http://localhost:5000/login',
+            'http://localhost:5000/',
             {
                 email,
                 password,
@@ -23,6 +23,7 @@ export default function LoginPage(){
           });
           request.catch((problem) => {
             console.log(problem.response.data);
+            alert(problem.response.data)
           });
     }
 
