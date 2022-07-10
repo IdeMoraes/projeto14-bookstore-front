@@ -146,7 +146,7 @@ margin-bottom: 65px;
 
 
 
-export const ConteinerCatalago = styled.section`
+export const ConteinerConteudo= styled.section`
     width:100%;
     margin: 90px;
     display: flex;

@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import UserContext from "../../contexts/UserContext";
-import { NewHeader,ContainerTotal,ConteinerMobile,Instrução,NewFooter,ConteinerCatalago,ConteinerProdutos,CardLivro,ImgSection,ImgStyled,ButtonSection} from "../../Css-Component/css-components";
+import { NewHeader,ContainerTotal,ConteinerMobile,Instrução,NewFooter,ConteinerConteudo,ConteinerProdutos,CardLivro,ImgSection,ImgStyled,ButtonSection} from "../../Css-Component/css-components";
 import ProdutosButtons from "./ProdutosButtons";
 
 
@@ -62,7 +62,7 @@ export default function CatalagoPage(){
         <ContainerTotal>
             <ConteinerMobile>
                 <NewHeader><h1>Book📚Store</h1></NewHeader>
-                <ConteinerCatalago>
+                <ConteinerConteudo>
                     <Instrução>
                         <p>Olá novamente, {"Victor"} !</p>
                         <p>Catálogo de Livros:</p>
@@ -73,7 +73,7 @@ export default function CatalagoPage(){
                        <RenderProduto    image={"https://m.media-amazon.com/images/I/51XQMRLuGYL.jpg"} name={ "1984"} autor={"George Orwell"} valor={29.99} id={"001"}/>
                        <RenderProduto    image={"https://m.media-amazon.com/images/I/51XQMRLuGYL.jpg"} name={ "1984"} autor={"George Orwell"} valor={29.99} id={"001"}/>
                      </ConteinerProdutos>
-                </ConteinerCatalago>
+                </ConteinerConteudo>
                 <NewFooter to='/carrinho'>
                 <p>📚Abra seu carrinho:</p>
                 <p>Cadastre-se na Book📚Store!</p>
