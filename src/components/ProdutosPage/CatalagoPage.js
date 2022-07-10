@@ -68,49 +68,10 @@ export default function CatalagoPage(){
                         <p>Catálogo de Livros:</p>
                     </Instrução>
                     <ConteinerProdutos>
-                        <CardLivro>
-                            <ImgSection>
-                                <ImgStyled src="https://m.media-amazon.com/images/I/51XQMRLuGYL.jpg"alt={`capa do livro 1984`}></ImgStyled>
-                            </ImgSection>
-                            <section className="info_livros">
-                                <article>
-                                    <h3>1984</h3>
-                                    <p>George Orwell</p>
-                                </article>
-
-                                <article className="valor">
-                                    <p className="small">por </p> <h3><strong>R$29,99</strong></h3>
-                                </article>
-                            </section>
-                                <ButtonSection>
-                                    <button className="comprar"> Comprar</button>
-                                    <button> Saiba mais</button>
-                                </ButtonSection>
-                        </CardLivro>
-
-                        <CardLivro>
-                            <ImgSection>
-                                <ImgStyled src="https://m.media-amazon.com/images/I/51XQMRLuGYL.jpg"alt={`capa do livro 1984`}></ImgStyled>
-                            </ImgSection>
-                            <section className="info_livros">
-                                <article>
-                                    <h3>1984</h3>
-                                    <p>George Orwell</p>
-                                </article>
-
-                                <article className="valor">
-                                    <p className="small">por </p> <h3><strong>R$29,99</strong></h3>
-                                </article>
-                            </section>
-                                <ButtonSection>
-                                    <button className="comprar"> Comprar</button>
-                                    <button> Saiba mais</button>
-                                </ButtonSection>
-                                
-                            
-                        </CardLivro>
-                        
-
+                       <RenderProduto    image={"https://m.media-amazon.com/images/I/51XQMRLuGYL.jpg"} name={ "1984"} autor={"George Orwell"} valor={29.99} id={"001"}/>
+                       <RenderProduto    image={"https://m.media-amazon.com/images/I/51XQMRLuGYL.jpg"} name={ "1984"} autor={"George Orwell"} valor={29.99} id={"001"}/>
+                       <RenderProduto    image={"https://m.media-amazon.com/images/I/51XQMRLuGYL.jpg"} name={ "1984"} autor={"George Orwell"} valor={29.99} id={"001"}/>
+                       <RenderProduto    image={"https://m.media-amazon.com/images/I/51XQMRLuGYL.jpg"} name={ "1984"} autor={"George Orwell"} valor={29.99} id={"001"}/>
                      </ConteinerProdutos>
                 </ConteinerCatalago>
                 <NewFooter to='/carrinho'>
