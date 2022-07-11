@@ -1,12 +1,14 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import UserContext from "../../contexts/UserContext";
 
 export default function LoginPage(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const {setUserId, setUserName, setUserEmail, setUserToken} = useContext(UserContext);
 
     function logar(){
         const request = axios.post(
@@ -18,6 +20,11 @@ export default function LoginPage(){
           );
           request.then((response) => {
             console.log(response.data);
+            setUserId(response.data._id);
+            setUserName(response.data.name);
+            setUserEmail(response.data.email);
+            setUserToken(response.data.token)
+
             //Criar parte de receber dados e salvar no Context
             navigate("/cadastro"); /* Mudar para /catalog após o pull e verificar se api está retornando apenas uma sessão */
           });

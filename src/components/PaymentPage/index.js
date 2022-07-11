@@ -25,7 +25,6 @@ export default function PaymentPage(){
                 <p>Volte para  carrinho! 🛒</p>
             </Footer>
         </PaymentPageContainer>
-
     );
 }
 const PaymentPageContainer = styled.div`

@@ -15,7 +15,7 @@ export default function App() {
     const [userToken, setUserToken ] = useState('');
 
     return(
-        <UserContext.Provider value={{userName, setUserName, userEmail, setUserEmail, userId, setUserId, userToken, setUserToken}}>
+        <UserContext.Provider value={{userId, setUserId, userName, setUserName, userEmail, setUserEmail, userToken, setUserToken}}>
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<LoginPage/>}/>
