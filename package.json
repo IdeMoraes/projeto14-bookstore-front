@@ -1,13 +1,16 @@
 {
   "name": "projeto14-bookstore-front",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "axios": "^0.27.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-inlinesvg": "^3.0.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^4.0.3",
+    "styled-component": "^2.8.0",
     "styled-components": "^5.3.5"
   },
   "scripts": {
@@ -32,5 +35,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IdeMoraes/projeto14-bookstore-front.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IdeMoraes/projeto14-bookstore-front/issues"
+  },
+  "homepage": " ",
+  "devDependencies": {
+    "@svgr/webpack": "^6.2.1"
   }
 }

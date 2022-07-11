@@ -26,7 +26,9 @@ export default function LoginPage(){
             setUserToken(response.data.token)
 
             //Criar parte de receber dados e salvar no Context
-            navigate("/cadastro"); /* Mudar para /catalog após o pull e verificar se api está retornando apenas uma sessão */
+
+            navigate("/catalogo");
+
           });
           request.catch((problem) => {
             console.log(problem.response.data);
