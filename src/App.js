@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
+import CartPage from './components/CartPage';
 import UserContext from './contexts/UserContext';
 import './css/reset.css';
 import './css/style.css';
@@ -18,6 +19,7 @@ export default function App() {
                 <Routes>
                     <Route path='/' element={<LoginPage/>}/>
                     <Route path='/cadastro' element={<SignupPage/>}/>
+                    <Route path='/carrinho' element={<CartPage/>}/>
                 </Routes>
             </BrowserRouter>
         </UserContext.Provider>
