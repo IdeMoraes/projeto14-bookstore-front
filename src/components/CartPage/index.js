@@ -5,7 +5,7 @@ import styled from "styled-components";
 import UserContext from "../../contexts/UserContext";
 
 export default function CartPage(){
-    const objetoQueVemDoBack = [
+/*     const objetoQueVemDoBack = [
         {
         _id: "62cb1eb711a3da9d70fb8a15",
         idDoLivro: 1,
@@ -26,9 +26,9 @@ export default function CartPage(){
         descricao: "um livro muito legal!.",
         quantidadeEmEstoque: 40
         },
-    ];
+    ]; */
     const navigate = useNavigate()
-/*     const [chosenBooks,setChosenBooks]=useState([]);
+    const [chosenBooks,setChosenBooks]=useState([]);
 
     const { userToken } = useContext(UserContext);
     const config = {
@@ -37,11 +37,11 @@ export default function CartPage(){
         }
     }
     useEffect(() => {
-		const requisicao = axios.get("http://localhost:5000/produtos/carrinho", config);
+		const requisicao = axios.get("https://projeto14-bookstore-back.herokuapp.com/carrinho", config);
 		requisicao.then(resposta => {
             setChosenBooks(resposta.data);
         });
-	}, []); */
+	}, []);
 
     function confirmarCarrinho(){
         navigate("/pagamento");
@@ -60,7 +60,7 @@ export default function CartPage(){
                 }
             </Soma>
             <Button onClick={()=>confirmarCarrinho()}>Ao pagamento</Button>
-            <Footer to='/'>  {/* Trocar para /catalogo após o pull dessa feature */}
+            <Footer to='/catalogo'> 
             📚 Volte ao catálogo:
             </Footer>
         </CartPageContainer>

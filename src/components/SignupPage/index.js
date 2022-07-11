@@ -13,7 +13,7 @@ export default function SignupPage(){
     function cadastrar(){
         if(password===passwordConfirmation){
             const request = axios.post(
-                'http://localhost:5000/cadastro',
+                'https://projeto14-bookstore-back.herokuapp.com/cadastro',
                 {
                     name,
                     email,

@@ -13,7 +13,7 @@ function enviarParaCarrinho(id_prod,userId, userToken){
         id_prod,
         id_user:userId
     }
-    const promise = axios.post("http://localhost:5000/carrinho",body,config)
+    const promise = axios.post("https://projeto14-bookstore-back.herokuapp.com/carrinho",body,config)
 }
 
 export default function ProdutosButtons(id_produto){

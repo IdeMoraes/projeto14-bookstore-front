@@ -34,7 +34,7 @@ export default function SucessoPage(){
     }
 
     useEffect(()=>{
-        const promise = axios.get("http://localhost:5000/pedido",config);
+        const promise = axios.get("https://projeto14-bookstore-back.herokuapp.com/pedido",config);
         promise.then((res)=>{
             setProdutos([...res.data]);
             setLoading(false);

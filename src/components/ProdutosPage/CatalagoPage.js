@@ -17,7 +17,7 @@ export default function CatalagoPage(){
     }
 
     useEffect(()=>{
-        const promise = axios.get("http://localhost:5000/produtos",config);
+        const promise = axios.get("https://projeto14-bookstore-back.herokuapp.com/produtos",config);
         promise.then((res)=>{
             setProdutos([...res.data]);
             setLoading(false);

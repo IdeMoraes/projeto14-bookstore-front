@@ -12,7 +12,7 @@ export default function LoginPage(){
 
     function logar(){
         const request = axios.post(
-            'http://localhost:5000/',
+            'https://projeto14-bookstore-back.herokuapp.com/',
             {
                 email,
                 password,
@@ -24,9 +24,6 @@ export default function LoginPage(){
             setUserName(response.data.name);
             setUserEmail(response.data.email);
             setUserToken(response.data.token)
-
-            //Criar parte de receber dados e salvar no Context
-
             navigate("/catalogo");
 
           });
