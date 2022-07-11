@@ -5,7 +5,7 @@ import styled from "styled-components";
 import UserContext from "../../contexts/UserContext";
 
 export default function CartPage(){
-/*     const objetoQueVemDoBack = [
+    const objetoQueVemDoBack = [
         {
         _id: "62cb1eb711a3da9d70fb8a15",
         idDoLivro: 1,
@@ -26,9 +26,9 @@ export default function CartPage(){
         descricao: "um livro muito legal!.",
         quantidadeEmEstoque: 40
         },
-    ]; */
+    ];
     const navigate = useNavigate()
-    const [chosenBooks,setChosenBooks]=useState([]);
+/*     const [chosenBooks,setChosenBooks]=useState([]);
 
     const { userToken } = useContext(UserContext);
     const config = {
@@ -41,7 +41,7 @@ export default function CartPage(){
 		requisicao.then(resposta => {
             setChosenBooks(resposta.data);
         });
-	}, []);
+	}, []); */
 
     function confirmarCarrinho(){
         navigate("/pagamento");
@@ -50,9 +50,9 @@ export default function CartPage(){
         <CartPageContainer>
             <Header>Book📚Store</Header>
             <Instrução>Confira os livros em seu carrinho:</Instrução>
-            {chosenBooks.map(livro=> <MostrarLivro imagem={livro.imagem} titulo={livro.titulo} preco={livro.preco} quantidadeEmEstoque={livro.quantidadeEmEstoque}/>)}
+            {objetoQueVemDoBack.map(livro=> <MostrarLivro imagem={livro.imagem} titulo={livro.titulo} preco={livro.preco} quantidadeEmEstoque={livro.quantidadeEmEstoque}/>)}
             <Button onClick={()=>confirmarCarrinho()}>Ao pagamento</Button>
-            <Footer to='/cadastro'>
+            <Footer to='/'>  {/* Trocar para /catalogo após o pull dessa feature */}
             📚 Volte ao catálogo:
             </Footer>
         </CartPageContainer>

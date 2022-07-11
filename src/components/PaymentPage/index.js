@@ -3,46 +3,32 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-export default function LoginPage(){
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+
+export default function PaymentPage(){
+    const [numeroDoCartao, setNumeroDoCartao] = useState('');
+    const [nomeNoCartao, setNomeNoCartao] = useState('');
+    const [vencimentoDoCartao, setVencimentoDoCartao] = useState('');
+    const [codigoDoCartao, setCodigoDoCartao] = useState('');
     const navigate = useNavigate();
 
-    function logar(){
-        const request = axios.post(
-            'http://localhost:5000/',
-            {
-                email,
-                password,
-            }
-          );
-          request.then((response) => {
-            console.log(response.data);
-            //Criar parte de receber dados e salvar no Context
-            navigate("/cadastro"); /* Mudar para /catalog após o pull e verificar se api está retornando apenas uma sessão */
-          });
-          request.catch((problem) => {
-            console.log(problem.response.data);
-            alert(problem.response.data)
-          });
-    }
-
     return(
-        <LoginPageContainer>
+        <PaymentPageContainer>
             <Header>Book📚Store</Header>
-            <Instrução>Preencha seus dados para login:</Instrução>
-            <Input type='email' placeholder="E-mail" onChange={(event)=>setEmail(event.target.value)}/>
-            <Input type='password' placeholder="Senha" onChange={(event)=>setPassword(event.target.value)}/>
-            <Button onClick={()=>logar()}>Entrar</Button>
+            <Instrução>Preencha com os dados do seu cartão de crédito:</Instrução>
+            <Input type='text' placeholder="Número do cartão" onChange={(event)=>setNumeroDoCartao(event.target.value)}/>
+            <Input type='text' placeholder="Nome do titular" onChange={(event)=>setNomeNoCartao(event.target.value)}/>
+            <Input type='text' placeholder="Data de vencimento" onChange={(event)=>setVencimentoDoCartao(event.target.value)}/>
+            <Input type='password' placeholder="Código de segurança" onChange={(event)=>setCodigoDoCartao(event.target.value)}/>
+            <Button onClick={()=>alert("Funcionalidade ainda não implementada")}>Efetuar a compra</Button>
             <Footer to='/cadastro'>
                 <p>Ainda não possui conta?</p>
                 <p>Cadastre-se na Book📚Store!</p>
             </Footer>
-        </LoginPageContainer>
+        </PaymentPageContainer>
 
     );
 }
-const LoginPageContainer = styled.div`
+const PaymentPageContainer = styled.div`
 background-color: #E2C9AD;
 min-height: 100vh;
 padding-top: 340px;
@@ -95,7 +81,7 @@ height: 175px;
 padding-left: 50px;
 font-family: 'Inter';
 font-weight: 400px;
-font-size: 100px;
+font-size: 80px;
 margin-bottom: 65px;
 ::placeholder{
     color: #788875;
