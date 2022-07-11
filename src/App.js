@@ -5,7 +5,6 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import CatalagoPage from './components/ProdutosPage/CatalagoPage.js';
 import SucessoPage from './components/SucessoPage/SucessoPage';
-import UserContext from './contexts/UserContext';
 import CartPage from './components/CartPage';
 import PaymentPage from './components/PaymentPage';
 
