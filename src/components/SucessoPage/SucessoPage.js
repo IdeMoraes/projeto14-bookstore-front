@@ -1,9 +1,60 @@
 import { NewHeader,ContainerTotal,ConteinerMobile,Instrução,NewFooter,ConteinerConteudo,ConteinerProdutos,CardLivro,ImgSection,ImgStyled,ButtonSection} from "../../Css-Component/css-components";
 import styled from "styled-components";
-import Checkbox from "../../assets/Checkbox";
+import axios from "axios";
+import { useContext,useEffect,useState } from "react";
+import UserContext from "../../contexts/UserContext";
+
+
+function ProdutoPedido(imagem,titulo,autor,preco){
+    const novoPreco = preco?.replace('.',',')
+    return(
+        <ProdutoStyled>
+            <ImgMini>
+                <img src={imagem} />
+            </ImgMini> 
+            <ProdutoDados>
+                <h4>{titulo}</h4>
+                <p>{autor}</p>
+            </ProdutoDados>
+            <ProdutoDados>
+                <p>por</p>
+                <h4>R${novoPreco}</h4>
+            </ProdutoDados>
+                           
+        </ProdutoStyled>
+    )
+}
 
 export default function SucessoPage(){
+    const [produtos,setProdutos] = useState(null)
+    const [loading,setLoading]=useState(true)
+    const {userToken} = useContext(UserContext)
+    const config = {
+        token:`Bearer ${userToken}`
+    }
 
+    useEffect(()=>{
+        const promise = axios.get("http://localhost:5000/pedido",config);
+        promise.then((res)=>{
+            setProdutos([...res.data]);
+            setLoading(false);
+        }).catch((error)=>{ console.log(error)}) },[])
+
+    function renderListaProduto(){
+        if(loading){
+            return
+        }else{
+            return(<>
+             {produtos.map((produto)=>{<ProdutoPedido
+                    imagem= {produto.imagem}
+                    titulo={produto.titulo}
+                    autor={produto.autor}
+                    preco={produto.preco} />})}
+            </>
+               
+            )
+        }
+    }
     return(
         <ContainerTotal>
             <ConteinerMobile>
@@ -15,20 +66,7 @@ export default function SucessoPage(){
                     </Instrução>
                     <CheckoutSection>
                         <CategoriaStyled>Produtos: </CategoriaStyled>
-                        <ProdutoStyled>
-                            <ImgMini>
-                            <img src="https://m.media-amazon.com/images/I/51XQMRLuGYL.jpg" />
-                            </ImgMini> 
-                            <ProdutoDados>
-                                <h4>1984</h4>
-                                <p>George Orwell</p>
-                            </ProdutoDados>
-                            <ProdutoDados>
-                                <p>por</p>
-                                <h4>R$29,99</h4>
-                            </ProdutoDados>
-                           
-                        </ProdutoStyled>
+                        {renderListaProduto()}
                     </CheckoutSection>
                 </ConteinerConteudo>
                
