@@ -46,11 +46,19 @@ export default function CartPage(){
     function confirmarCarrinho(){
         navigate("/pagamento");
     }
+
     return(
         <CartPageContainer>
             <Header>Book📚Store</Header>
             <Instrução>Confira os livros em seu carrinho:</Instrução>
             {objetoQueVemDoBack.map(livro=> <MostrarLivro imagem={livro.imagem} titulo={livro.titulo} preco={livro.preco} quantidadeEmEstoque={livro.quantidadeEmEstoque}/>)}
+            <Soma>
+                Valor total: {
+                objetoQueVemDoBack.reduce((acumulador, valorAtual)=>{
+                    return acumulador + valorAtual.preco;
+                }, 0)
+                }
+            </Soma>
             <Button onClick={()=>confirmarCarrinho()}>Ao pagamento</Button>
             <Footer to='/'>  {/* Trocar para /catalogo após o pull dessa feature */}
             📚 Volte ao catálogo:
@@ -60,6 +68,10 @@ export default function CartPage(){
 }
 
 function MostrarLivro(props){
+    function deletarDoCarrinho(){
+        alert("Funcionalidade ainda não implementada");
+        document.location.reload(true);
+    }
     return(
         <Livro>
             <Capa src={props.imagem}/>
@@ -67,7 +79,7 @@ function MostrarLivro(props){
                 <Titulo>
                     <InformaPreco>R${props.preco}</InformaPreco>
                     {props.titulo}
-                    <ion-icon name="trash" onClick={()=>alert("Funcionalidade ainda não implementada")}></ion-icon>
+                    <ion-icon name="trash" onClick={()=>deletarDoCarrinho()}></ion-icon>
                 </Titulo>
                 <Quantidade>
                 <ion-icon name="remove-circle" onClick={()=>alert("Funcionalidade ainda não implementada")}></ion-icon>
@@ -89,6 +101,14 @@ display: flex;
 flex-direction: column;
 align-items: center;
 `;
+const Soma = styled.div`
+font-family: "Merriweather";
+font-size: 70px;
+font-weight: 400;
+text-align: center;
+color:black;
+margin-bottom: 65px;
+`; 
 const Header = styled.div`
 width: 100vw;
 height: 340px;

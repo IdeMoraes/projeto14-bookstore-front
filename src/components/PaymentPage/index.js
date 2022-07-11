@@ -20,9 +20,9 @@ export default function PaymentPage(){
             <Input type='text' placeholder="Data de vencimento" onChange={(event)=>setVencimentoDoCartao(event.target.value)}/>
             <Input type='password' placeholder="Código de segurança" onChange={(event)=>setCodigoDoCartao(event.target.value)}/>
             <Button onClick={()=>alert("Funcionalidade ainda não implementada")}>Efetuar a compra</Button>
-            <Footer to='/cadastro'>
-                <p>Ainda não possui conta?</p>
-                <p>Cadastre-se na Book📚Store!</p>
+            <Footer to='/carrinho'>
+                <p>Gostaria de checar mais uma vez?</p>
+                <p>Volte para  carrinho! 🛒</p>
             </Footer>
         </PaymentPageContainer>
 
