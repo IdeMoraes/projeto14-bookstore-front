@@ -80,8 +80,8 @@ export default function CatalagoPage(){
                      </ConteinerProdutos>
                 </ConteinerConteudo>
                 <NewFooter to='/carrinho'>
-                <p>📚Abra seu carrinho:</p>
-                <p>Cadastre-se na Book📚Store!</p>
+                <p>📚Abra seu carrinho</p>
+               
             </NewFooter>
             </ConteinerMobile>
             

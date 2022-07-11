@@ -19,7 +19,7 @@ export default function LoginPage(){
           request.then((response) => {
             console.log(response.data);
             //Criar parte de receber dados e salvar no Context
-            navigate("/");
+            navigate("/catalogo");
           });
           request.catch((problem) => {
             console.log(problem.response.data);
