@@ -51,10 +51,10 @@ export default function CartPage(){
         <CartPageContainer>
             <Header>Book📚Store</Header>
             <Instrução>Confira os livros em seu carrinho:</Instrução>
-            {objetoQueVemDoBack.map(livro=> <MostrarLivro imagem={livro.imagem} titulo={livro.titulo} preco={livro.preco} quantidadeEmEstoque={livro.quantidadeEmEstoque}/>)}
+            {chosenBooks.map(livro=> <MostrarLivro imagem={livro.imagem} titulo={livro.titulo} preco={livro.preco} quantidadeEmEstoque={livro.quantidadeEmEstoque}/>)}
             <Soma>
                 Valor total: {
-                objetoQueVemDoBack.reduce((acumulador, valorAtual)=>{
+                chosenBooks.reduce((acumulador, valorAtual)=>{
                     return acumulador + valorAtual.preco;
                 }, 0)
                 }
