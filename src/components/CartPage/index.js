@@ -95,30 +95,30 @@ function MostrarLivro(props){
 const CartPageContainer = styled.div`
 background-color: #E2C9AD;
 min-height: 100vh;
-padding-top: 340px;
-padding-bottom: 340px;
+padding-top: 113.33px;
+padding-bottom: 113.33px;
 display: flex;
 flex-direction: column;
 align-items: center;
 `;
 const Soma = styled.div`
 font-family: "Merriweather";
-font-size: 70px;
-font-weight: 400;
+font-size: 23.33px;
+font-weight: 133.33;
 text-align: center;
 color:black;
-margin-bottom: 65px;
+margin-bottom: 21.67px;
 `; 
 const Header = styled.div`
 width: 100vw;
-height: 340px;
+height: 113.33px;
 background-color: #825139;
 display: flex;
 justify-content: center;
 align-items: center;
 font-family: 'Cinzel Decorative';
-font-weight: 400px;
-font-size: 150px;
+font-weight: 133.33px;
+font-size: 50px;
 color: black;
 position: fixed;
 left: 0;
@@ -126,113 +126,113 @@ top: 0;
 `;
 const Footer = styled(Link)`
 width: 100vw;
-height: 340px;
+height: 113.33px;
 background-color: #383F31;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 font-family: 'Merriweather Sans';
-font-weight: 400px;
-font-size: 60px;
+font-weight: 133.33px;
+font-size: 20px;
 color: white;
 position: fixed;
 right: 0;
 bottom: 0;
 `;
 const Instrução = styled.div`
-margin-top: 190px;
+margin-top: 63.33px;
 font-family: 'Merriweather Sans';
-font-weight: 400px;
-font-size: 70px;
-margin-bottom: 225px;
+font-weight: 133.33px;
+font-size: 23.33px;
+margin-bottom: 75px;
 `;
 const Button = styled.button`
-width: 900px;
-height: 200px;
+width: 300px;
+height: 66.67px;
 background-color: #788875;
 display: flex;
 justify-content: center;
 align-items: center;
 font-family: 'Merriweather';
-font-weight: 700px;
-font-size: 100px;
-margin-bottom: 65px;
+font-weight: 233.33px;
+font-size: 33.33px;
+margin-bottom: 21.67px;
 `;
 const Livro = styled.div`
 display: flex;
-margin-bottom: 65px;
+margin-bottom: 21.67px;
 `;
 const Capa = styled.img`
-width:250px;
-height:415px;
+width:83.33px;
+height:138.33px;
 `;
 const Detalhes = styled.div`
-width: 815px;
-height: 415px;
+width: 271.67px;
+height: 138.33px;
 display: flex;
 flex-direction: column;
 `;
 const Titulo = styled.div`
-width: 815px;
-height: 205px;
+width: 271.67px;
+height: 68.33px;
 background-color: #A67853;
 position: relative;
-padding-right: 150px;
-padding-left: 250px;
+padding-right: 50px;
+padding-left: 83.33px;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 font-family: "Merriweather Sans";
-font-weight: 400px;
-font-size: 50px;
+font-weight: 133.33px;
+font-size: 16.67px;
 text-align: center;
 ion-icon{
     color: white;
-    width: 110px;
-    height: 129px;
+    width: 36.67px;
+    height: 43px;
     position: absolute;
-    right: 35px;
-    top: 38px
+    right: 11.67px;
+    top: 12.67px
 }
 `;
 const InformaPreco = styled.p`
 font-family: "Merriweather Sans";
-font-weight: 400px;
-font-size: 50px;
+font-weight: 133.33px;
+font-size: 16.67px;
 text-align: center;
 position: absolute;
-left: 35px;
+left: 11.67px;
 `;
 const Quantidade = styled.div`
-width: 815px;
-height: 210px;
+width: 271.17px;
+height: 70px;
 background-color: #383F31;
-padding-left: 35px;
-padding-right: 35px;
+padding-left: 11.67px;
+padding-right: 11.67px;
 ion-icon{
-    width: 130px;
-    height: 130px;
+    width: 43.33px;
+    height: 43.33px;
     color: white;
 }
 display: flex;
 justify-content: space-between;
 align-items: center;
 font-family: "Merriweather";
-font-size: 70px;
-font-weight: 400;
+font-size: 23.33px;
+font-weight: 133.33;
 text-align: center;
 position: relative;
 color:white
 `;
 const InformaEstoque = styled.p`
 font-family: Merriweather;
-font-size: 40px;
-font-weight: 400;
+font-size: 13.33px;
+font-weight: 133.33;
 text-align: center;
 position: absolute;
-bottom: 25px;
-right: 248px;
+bottom: 8.33px;
+right: 82.67px;
 color: white;
 `;
