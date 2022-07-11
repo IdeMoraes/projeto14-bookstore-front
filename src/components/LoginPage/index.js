@@ -1,12 +1,14 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import UserContext from "../../contexts/UserContext";
 
 export default function LoginPage(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const {setUserId, setUserName, setUserEmail, setUserToken} = useContext(UserContext);
 
     function logar(){
         const request = axios.post(
@@ -18,8 +20,15 @@ export default function LoginPage(){
           );
           request.then((response) => {
             console.log(response.data);
+            setUserId(response.data._id);
+            setUserName(response.data.name);
+            setUserEmail(response.data.email);
+            setUserToken(response.data.token)
+
             //Criar parte de receber dados e salvar no Context
+
             navigate("/catalogo");
+
           });
           request.catch((problem) => {
             console.log(problem.response.data);
@@ -45,22 +54,22 @@ export default function LoginPage(){
 const LoginPageContainer = styled.div`
 background-color: #E2C9AD;
 min-height: 100vh;
-padding-top: 340px;
-padding-bottom: 340px;
+padding-top: 113.33px;
+padding-bottom: 113.33px;
 display: flex;
 flex-direction: column;
 align-items: center;
 `;
 const Header = styled.div`
 width: 100vw;
-height: 340px;
+height: 113.33px;
 background-color: #825139;
 display: flex;
 justify-content: center;
 align-items: center;
 font-family: 'Cinzel Decorative';
-font-weight: 400px;
-font-size: 150px;
+font-weight: 133.33px;
+font-size: 50px;
 color: black;
 position: fixed;
 left: 0;
@@ -68,48 +77,48 @@ top: 0;
 `;
 const Footer = styled(Link)`
 width: 100vw;
-height: 340px;
+height: 113.33px;
 background-color: #383F31;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 font-family: 'Merriweather Sans';
-font-weight: 400px;
-font-size: 60px;
+font-weight: 133.33px;
+font-size: 20px;
 color: white;
 position: fixed;
 right: 0;
 bottom: 0;
 `;
 const Instrução = styled.div`
-margin-top: 190px;
+margin-top: 63.33px;
 font-family: 'Merriweather Sans';
-font-weight: 400px;
-font-size: 70px;
-margin-bottom: 225px;
+font-weight: 133.33px;
+font-size: 23.33px;
+margin-bottom: 75px;
 `;
 const Input = styled.input`
-width: 900px;
-height: 175px;
-padding-left: 50px;
+width: 300px;
+height: 58.33px;
+padding-left: 16.67px;
 font-family: 'Inter';
-font-weight: 400px;
-font-size: 100px;
-margin-bottom: 65px;
+font-weight: 133.33px;
+font-size: 33.33px;
+margin-bottom: 21.67px;
 ::placeholder{
     color: #788875;
 }
 `;
 const Button = styled.button`
-width: 900px;
-height: 200px;
+width: 300px;
+height: 66.67px;
 background-color: #788875;
 display: flex;
 justify-content: center;
 align-items: center;
 font-family: 'Merriweather';
-font-weight: 700px;
-font-size: 100px;
-margin-bottom: 65px;
+font-weight: 233.33px;
+font-size: 33.33px;
+margin-bottom: 21.67px;
 `;
